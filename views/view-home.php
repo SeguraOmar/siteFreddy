@@ -4,6 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="../assets/css/home.css" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
     <title>Document</title>
 </head>
@@ -39,7 +40,7 @@
             </button>
 
             <!-- Menu burger pour les petits écrans -->
-            <div class="lg:hidden">
+            <div class="lg:hidden menu-burger">
                 <button id="menuToggle" class="text-white font-bold">
                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-8 h-8">
                         <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
@@ -75,6 +76,36 @@
         </div>
     </section>
 
+    <section class="bg-gray-100 py-16">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div class="bg-white rounded-lg p-8">
+                    <h2 class="text-2xl font-bold mb-4">Qu'est-ce que l'IA ?</h2>
+                    <p class="text-gray-700">L'intelligence artificielle (IA) est un domaine de l'informatique qui vise à créer des machines capables d'effectuer des tâches qui nécessitent normalement l'intelligence humaine. Cela inclut des activités telles que la reconnaissance vocale, la vision par ordinateur, l'apprentissage automatique et la prise de décision.</p>
+                </div>
+                <div class="bg-white rounded-lg p-8">
+                    <h2 class="text-2xl font-bold mb-4">Qu'est-ce que le Cloud ?</h2>
+                    <p class="text-gray-700">Le Cloud Computing est un modèle de fourniture de services informatiques via Internet. Au lieu d'héberger des applications et des données sur un serveur local, le Cloud permet d'accéder à des ressources informatiques à la demande, telles que des serveurs, des bases de données, des applications et des services de stockage, via Internet.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="bg-gray-800 py-4 fixed bottom-0 w-full">
+        <div class="container mx-auto px-4">
+            <div class="flex items-center justify-between">
+                <div class="text-white">
+                    &copy; 2022 Freddy. Tous droits réservés.
+                </div>
+                <div class="text-white">
+                    Suivez-nous sur les réseaux sociaux:
+                    <a href="#" class="text-blue-500 ml-2">Facebook</a>
+                    <a href="#" class="text-blue-500 ml-2">Twitter</a>
+                    <a href="#" class="text-blue-500 ml-2">Instagram</a>
+                </div>
+            </div>
+        </div>
+    </footer>
 
 
     <script src="../script/navbar.js"></script>
