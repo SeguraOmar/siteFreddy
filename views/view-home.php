@@ -32,12 +32,25 @@
                 </svg>
             </button>
 
-            <button class="text-white font-bold hidden lg:flex items-center">
-                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
-                    <path stroke-linecap="round" stroke-linejoin="round" d="M17.982 18.725A7.488 7.488 0 0 0 12 15.75a7.488 7.488 0 0 0-5.982 2.975m11.963 0a9 9 0 1 0-11.963 0m11.963 0A8.966 8.966 0 0 1 12 21a8.966 8.966 0 0 1-5.982-2.275M15 9.75a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z" />
-                </svg>
-                <span class="ml-2">Espace client</span>
-            </button>
+            <div class="relative" id="clientContainer">
+                <button class="text-white font-bold hidden lg:flex items-center">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M17.982 18.725A7.488 7.488 0 0 0 12 15.75a7.488 7.488 0 0 0-5.982 2.975m11.963 0a9 9 0 1 0-11.963 0m11.963 0A8.966 8.966 0 0 1 12 21a8.966 8.966 0 0 1-5.982-2.275M15 9.75a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z" />
+                    </svg>
+                    <span class="ml-2">Espace client</span>
+                </button>
+                <div class="absolute hidden bg-gray-800 p-4 top-10 right-0" id="clientMenu">
+                    <button class="text-white font-bold block mt-3">
+                        Connexion
+                    </button>
+                    <button class="text-white font-bold block mt-3">
+                        Inscription
+                    </button>
+                </div>
+            </div>
+
+
+
 
             <!-- Menu burger pour les petits écrans -->
             <div class="lg:hidden menu-burger">
@@ -66,10 +79,12 @@
         <div class="bg-cover bg-center h-96" style="background-image: url('../assets/image/ImageHome.jpg')">
             <div class="flex items-center justify-center h-full">
                 <div class="bg-white p-8">
-                    <h2 class="text-3xl font-bold mb-4">Rechercher des formations en IA et en Cloud</h2>
+                    <h2 class="text-3xl font-bold mb-4">Recherchez des formations en IA et en Cloud</h2>
                     <form action="/search" method="GET">
-                        <input type="text" name="query" placeholder="Entrez votre recherche" class="border border-gray-300 px-4 py-2 rounded-md mr-2">
-                        <button type="submit" class="bg-blue-500 text-white px-4 py-2 rounded-md">Rechercher</button>
+                        <div class="flex justify-center">
+                            <input type="text" name="query" placeholder="IA ou Cloud" class="border border-gray-300 px-4 py-2 rounded-md mr-2">
+                            <button type="submit" class="bg-blue-500 text-white px-4 py-2 rounded-md">Rechercher</button>
+                        </div>
                     </form>
                 </div>
             </div>
@@ -95,7 +110,7 @@
         <div class="container mx-auto px-4">
             <div class="flex items-center justify-between">
                 <div class="text-white">
-                    &copy; 2022 Freddy. Tous droits réservés.
+                    &copy; 2024 Freddy. Tous droits réservés.
                 </div>
                 <div class="text-white">
                     Suivez-nous sur les réseaux sociaux:
@@ -106,7 +121,6 @@
             </div>
         </div>
     </footer>
-
 
     <script src="../script/navbar.js"></script>
 </body>
