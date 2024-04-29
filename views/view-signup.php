@@ -10,14 +10,12 @@
 
 <body>
 
-    <nav class="flex items-center justify-between bg-gray-800 p-4">
-        <a href="../controllers/controller-home.php">
-            <div class="flex items-center space-x-2">
-                <span id="logo" class="text-white text-5xl my-2 lg:my-0 lg:ml-36 transition-all duration-300">Freddy</span>
-                <span class="text-white text-4xl"> | </span>
-                <span class="text-white text-xl my-2">Formation aux métiers<br> du Cloud et de l'IA</span>
-            </div>
-        </a>
+<nav class="flex items-center justify-between bg-gray-800 p-4">
+        <div class="flex items-center space-x-2">
+            <span id="logo" class="text-white text-5xl my-2 lg:my-0 lg:ml-36 transition-all duration-300">Freddy</span>
+            <span class="text-white text-4xl"> | </span>
+            <span class="text-white text-xl my-2">Formation aux métiers<br> du Cloud et de l'IA</span>
+        </div>
 
         <div class="flex items-center space-x-16 mr-6 lg:mr-36">
             <!-- Menu pour les grands écrans -->
@@ -42,16 +40,36 @@
                     <span class="ml-2">Espace client</span>
                 </button>
                 <div class="absolute hidden bg-gray-800 p-4 top-10 right-0" id="clientMenu">
-                    <a href="../controllers/controller-signin.php">
-                        <button class="text-white font-bold block mt-3">
-                            Connexion
-                        </button>
-                    </a>
-                    <a href="../controllers/controller-signup.php">
-                        <button class="text-white font-bold block mt-3">
-                            Inscription
-                        </button>
-                    </a>
+                     <a href="../controllers/controller-signin.php"><button class="text-white font-bold block mt-3">
+                        Connexion
+                    </button></a>
+                    <a href="../controllers/controller-signup.php"><button class="text-white font-bold block mt-3">
+                        Inscription
+                    </button></a>
+                </div>
+            </div>
+
+
+
+
+            <!-- Menu burger pour les petits écrans -->
+            <div class="lg:hidden menu-burger">
+                <button id="menuToggle" class="text-white font-bold">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-8 h-8">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+                    </svg>
+                </button>
+                <div id="menu" class="hidden bg-gray-800 p-4 absolute top-16 left-0 w-full mt-16">
+                    <button class="text-white font-bold block mb-2">
+                        Nous contacter
+                    </button>
+                    <button class="text-white font-bold block mb-2">
+                        Espace client
+                    </button>
+                    <!-- Panier -->
+                    <button class="text-white font-bold block mb-2">
+                        Panier
+                    </button>
                 </div>
             </div>
         </div>
@@ -105,7 +123,8 @@
             <?php endif; ?>
         </div>
         <button type="submit" class="bg-blue-500 text-white px-4 py-2 rounded-md mt-5">S'inscrire</button>
-        <button class="bg-blue-500 text-white px-4 py-2 rounded-md mt-5">Connexion</button>
+        <a href="../controllers/controller-signin.php"><button type="submit" name="login_submit" class="bg-blue-500 text-white px-4 py-2 rounded-md mt-5">Connexion</button></a>
+
         
     </form>
 </div>

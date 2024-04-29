@@ -1,9 +1,13 @@
 <?php 
 
-
 require_once '../config/config.php';
 require_once '../models/utilisateur.php';
 
+// Vérifier si le formulaire de connexion est soumis
+if(isset($_POST['login_submit'])) {
+    header("Location: ../controllers/controller-signin.php");
+    exit();
+}
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $errors = [];
@@ -67,10 +71,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 }
 
 include_once '../views/view-signup.php';
-header('Location: ../views/view-signin.php');
 exit();
 
 
 ?>
-
-
