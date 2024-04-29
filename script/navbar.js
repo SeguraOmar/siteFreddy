@@ -25,7 +25,7 @@ function showClientMenu() {
 function hideClientMenu() {
     timeout = setTimeout(() => {
         clientMenu.classList.add('hidden');
-    }, 200); // 200 millisecondes de délai avant de masquer le menu
+    }, 400); // 400 millisec de délai avant de masquer le menu
 }
 
 // Ajout des écouteurs d'événements pour gérer le survol et le retrait du curseur du conteneur client

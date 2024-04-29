@@ -40,12 +40,12 @@
                     <span class="ml-2">Espace client</span>
                 </button>
                 <div class="absolute hidden bg-gray-800 p-4 top-10 right-0" id="clientMenu">
-                    <button class="text-white font-bold block mt-3">
+                     <a href="../controllers/controller-signin.php"><button class="text-white font-bold block mt-3">
                         Connexion
-                    </button>
-                    <button class="text-white font-bold block mt-3">
+                    </button></a>
+                    <a href="../controllers/controller-signup.php"><button class="text-white font-bold block mt-3">
                         Inscription
-                    </button>
+                    </button></a>
                 </div>
             </div>
 
