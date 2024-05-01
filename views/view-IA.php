@@ -1,16 +1,13 @@
 <!DOCTYPE html>
 <html lang="fr">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="../assets/css/home.css" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
     <title>Document</title>
 </head>
-
 <body>
-    <nav class="flex items-center justify-between bg-gray-800 p-4">
+<nav class="flex items-center justify-between bg-gray-800 p-4">
         <div class="flex items-center space-x-2">
             <span id="logo" class="text-white text-5xl my-2 lg:my-0 lg:ml-36 transition-all duration-300">Freddy</span>
             <span class="text-white text-4xl"> | </span>
@@ -74,59 +71,5 @@
             </div>
         </div>
     </nav>
-
-    <section class="bg-gray-200">
-        <div class="bg-cover bg-center h-96" style="background-image: url('../assets/image/ImageHome.jpg')">
-            <div class="flex items-center justify-center h-full">
-                <div class="bg-white p-8">
-                    <h2 class="text-3xl font-bold mb-4">Recherchez des formations en IA et en Cloud</h2>
-                    <form id="searchForm" method="GET">
-                        <div class="flex justify-center">
-                            <select name="category" id="category" class="border border-gray-300 px-4 py-2 rounded-md mr-2">
-                                <option value="IA">IA</option>
-                                <option value="Cloud">Cloud</option>
-                            </select>
-                            <button type="button" id="SearchButton" class="bg-blue-500 text-white px-4 py-2 rounded-md">Rechercher</button>
-                        </div>
-                    </form>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section class="bg-gray-100 py-16">
-        <div class="container mx-auto px-4">
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-                <div class="bg-white rounded-lg p-8">
-                    <h2 class="text-2xl font-bold mb-4">Qu'est-ce que l'IA ?</h2>
-                    <p class="text-gray-700">L'intelligence artificielle (IA) est un domaine de l'informatique qui vise à créer des machines capables d'effectuer des tâches qui nécessitent normalement l'intelligence humaine. Cela inclut des activités telles que la reconnaissance vocale, la vision par ordinateur, l'apprentissage automatique et la prise de décision.</p>
-                </div>
-                <div class="bg-white rounded-lg p-8">
-                    <h2 class="text-2xl font-bold mb-4">Qu'est-ce que le Cloud ?</h2>
-                    <p class="text-gray-700">Le Cloud Computing est un modèle de fourniture de services informatiques via Internet. Au lieu d'héberger des applications et des données sur un serveur local, le Cloud permet d'accéder à des ressources informatiques à la demande, telles que des serveurs, des bases de données, des applications et des services de stockage, via Internet.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <footer class="bg-gray-800 py-4 fixed bottom-0 w-full">
-        <div class="container mx-auto px-4">
-            <div class="flex items-center justify-between">
-                <div class="text-white">
-                    &copy; 2024 Freddy. Tous droits réservés.
-                </div>
-                <div class="text-white">
-                    Suivez-nous sur les réseaux sociaux:
-                    <a href="#" class="text-blue-500 ml-2">Facebook</a>
-                    <a href="#" class="text-blue-500 ml-2">Twitter</a>
-                    <a href="#" class="text-blue-500 ml-2">Instagram</a>
-                </div>
-            </div>
-        </div>
-    </footer>
-
-    <script src="../script/navbar.js"></script>
-    <script src="../script/formations.js"></script>
 </body>
-
 </html>
