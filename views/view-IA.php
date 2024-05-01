@@ -71,5 +71,26 @@
             </div>
         </div>
     </nav>
+    <div class="container mx-auto mt-10">
+        <h1 class="text-3xl font-bold mb-6">Formations en IA</h1>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <div class="bg-white rounded-lg shadow-lg p-6">
+                <h2 class="text-xl font-bold mb-4">Formation IA avancée</h2>
+                <p class="text-gray-700">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed euismod, tortor eget consectetur aliquet, mauris mauris lacinia nunc, nec tincidunt nisl urna et nunc.</p>
+                <a href="#" class="text-blue-500 font-bold mt-4">En savoir plus</a>
+            </div>
+            <div class="bg-white rounded-lg shadow-lg p-6">
+                <h2 class="text-xl font-bold mb-4">Formation IA pour les débutants</h2>
+                <p class="text-gray-700">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed euismod, tortor eget consectetur aliquet, mauris mauris lacinia nunc, nec tincidunt nisl urna et nunc.</p>
+                <a href="#" class="text-blue-500 font-bold mt-4">En savoir plus</a>
+            </div>
+            <div class="bg-white rounded-lg shadow-lg p-6">
+                <h2 class="text-xl font-bold mb-4">Formation IA appliquée à la finance</h2>
+                <p class="text-gray-700">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed euismod, tortor eget consectetur aliquet, mauris mauris lacinia nunc, nec tincidunt nisl urna et nunc.</p>
+                <a href="#" class="text-blue-500 font-bold mt-4">En savoir plus</a>
+            </div>
+        </div>
+    </div>
+    
 </body>
 </html>
