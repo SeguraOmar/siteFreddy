@@ -73,7 +73,17 @@
             </div>
         </div>
     </nav>
-<p>foejkfoekfeop</p>
+
+    <div class="container mx-auto mt-10">
+        <div class="text-3xl font-bold mb-5">Formations en Cloud</div>
+        <div class="text-lg">Découvrez nos formations spécialisées dans le domaine du Cloud.</div>
+        <div class="mt-5">
+            <div class="text-lg">Formation AWS</div>
+            <div class="text-lg">Formation Azure</div>
+            <div class="text-lg">Formation Google Cloud</div>
+        </div>
+    </div>
+
 </body>
 
 </html>

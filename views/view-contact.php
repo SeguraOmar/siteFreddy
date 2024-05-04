@@ -75,23 +75,31 @@
     </nav>
 
     <div class="flex items-center justify-center h-screen bg-gray-200">
-        <form onsubmit="sendEmail(); return false;" class="bg-gray-100 p-10 rounded-lg">
+        <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post" class="bg-gray-100 p-10 rounded-lg">
             <h1 class="text-2xl font-bold text-center mb-5">Contactez-nous</h1>
+            <?php if (!empty($success_message)) { ?>
+                <p class="text-green-500"><?php echo $success_message; ?></p>
+            <?php } ?>
+            <?php if (!empty($error_message)) { ?>
+                <p class="text-red-500"><?php echo $error_message; ?></p>
+            <?php } ?>
             <div class="mb-5">
                 <div class="flex flex-col">
                     <label for="email" class="block text-sm font-medium text-gray-700">Email</label>
-                    <input type="email" id="email" name="email" class="mt-1 p-2 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50">
+                    <input type="email" id="email" name="email" class="mt-1 p-2 block w-full rounded-md border border-black shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50">
                 </div>
             </div>
             <div class="mb-5">
                 <div class="flex flex-col">
                     <label for="message" class="block text-sm font-medium text-gray-700">Message</label>
-                    <textarea id="message" name="message" rows="4" class="mt-1 p-2 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50"></textarea>
+                    <textarea id="message" name="message" rows="4" class="mt-1 p-2 block w-full rounded-md border border-black shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50"></textarea>
                 </div>
             </div>
             <button type="submit" class="w-full bg-blue-500 text-white p-2 rounded-md">Valider</button>
         </form>
     </div>
+
+
 
 
 
