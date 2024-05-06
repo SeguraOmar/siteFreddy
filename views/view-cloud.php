@@ -8,7 +8,7 @@
     <title>Document</title>
 </head>
 
-<body>
+<body class="bg-gray-200">
     <nav class="flex items-center justify-between bg-gray-800 p-4">
         <div class="flex items-center space-x-2">
             <span id="logo" class="text-white text-5xl my-2 lg:my-0 lg:ml-36 transition-all duration-300">Freddy</span>
@@ -74,15 +74,41 @@
         </div>
     </nav>
 
-    <div class="container mx-auto mt-10">
-        <div class="text-3xl font-bold mb-5">Formations en Cloud</div>
-        <div class="text-lg">Découvrez nos formations spécialisées dans le domaine du Cloud.</div>
-        <div class="mt-5">
-            <div class="text-lg">Formation AWS</div>
-            <div class="text-lg">Formation Azure</div>
-            <div class="text-lg">Formation Google Cloud</div>
+    <div class="container mx-auto mt-16">
+        <h1 class="text-3xl font-bold text-gray-800 mb-4 text-center">Formations Cloud</h1>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <?php foreach ($formations as $index => $formation) : ?>
+                <div class="bg-white rounded-lg shadow-md p-6 mb-4 <?php echo ($index === count($formations) - 1) ? 'md:col-span-2 md:text-center' : ''; ?>">
+                    <h2 class="text-xl font-bold text-gray-800 mb-2"><?php echo $formation['titre']; ?></h2>
+                    <p class="text-gray-600 mb-2"><?php echo $formation['description']; ?></p>
+                    <p class="text-gray-700">Prix : <?php echo $formation['prix']; ?> €</p>
+                    <div class="flex mt-4 <?php echo ($index === 2) ? 'justify-center' : ''; ?>">
+                        <button class="bg-blue-500 text-white px-4 py-2 rounded-md">Ajouter au panier</button>
+                        <button class="bg-gray-300 text-gray-800 px-4 py-2 rounded-md ml-4">Voir plus de détails</button>
+                    </div>
+                </div>
+            <?php endforeach; ?>
         </div>
     </div>
+
+
+    <footer class="bg-gray-800 py-4 fixed bottom-0 w-full">
+        <div class="container mx-auto px-4">
+            <div class="flex items-center justify-between">
+                <div class="text-white">
+                    &copy; 2024 Freddy. Tous droits réservés.
+                </div>
+                <div class="text-white">
+                    Suivez-nous sur les réseaux sociaux:
+                    <a href="#" class="text-blue-500 ml-2">Facebook</a>
+                    <a href="#" class="text-blue-500 ml-2">Twitter</a>
+                    <a href="#" class="text-blue-500 ml-2">Instagram</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../script/navbar.js"></script>
 
 </body>
 

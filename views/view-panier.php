@@ -1,14 +1,16 @@
 <!DOCTYPE html>
 <html lang="fr">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
     <title>Document</title>
 </head>
+
 <body>
-    
-<nav class="flex items-center justify-between bg-gray-800 p-4">
+
+    <nav class="flex items-center justify-between bg-gray-800 p-4">
         <div class="flex items-center space-x-2">
             <span id="logo" class="text-white text-5xl my-2 lg:my-0 lg:ml-36 transition-all duration-300">Freddy</span>
             <span class="text-white text-4xl"> | </span>
@@ -77,7 +79,28 @@
 
 
 
+
+
+    <footer class="bg-gray-800 py-4 fixed bottom-0 w-full">
+        <div class="container mx-auto px-4">
+            <div class="flex items-center justify-between">
+                <div class="text-white">
+                    &copy; 2024 Freddy. Tous droits réservés.
+                </div>
+                <div class="text-white">
+                    Suivez-nous sur les réseaux sociaux:
+                    <a href="#" class="text-blue-500 ml-2">Facebook</a>
+                    <a href="#" class="text-blue-500 ml-2">Twitter</a>
+                    <a href="#" class="text-blue-500 ml-2">Instagram</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+
+
     <script src="../script/navbar.js"></script>
     <script src="../script/formations.js"></script>
 </body>
+
 </html>

@@ -1,13 +1,15 @@
 <!DOCTYPE html>
 <html lang="fr">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
-    <title>Document</title>
+    <title>IA</title>
 </head>
-<body>
-<nav class="flex items-center justify-between bg-gray-800 p-4">
+
+<body class="bg-gray-200">
+    <nav class="flex items-center justify-between bg-gray-800 p-4">
         <div class="flex items-center space-x-2">
             <span id="logo" class="text-white text-5xl my-2 lg:my-0 lg:ml-36 transition-all duration-300">Freddy</span>
             <span class="text-white text-4xl"> | </span>
@@ -71,26 +73,42 @@
             </div>
         </div>
     </nav>
-    <div class="container mx-auto mt-10">
-        <h1 class="text-3xl font-bold mb-6">Formations en IA</h1>
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            <div class="bg-white rounded-lg shadow-lg p-6">
-                <h2 class="text-xl font-bold mb-4">Formation IA avancée</h2>
-                <p class="text-gray-700">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed euismod, tortor eget consectetur aliquet, mauris mauris lacinia nunc, nec tincidunt nisl urna et nunc.</p>
-                <a href="#" class="text-blue-500 font-bold mt-4">En savoir plus</a>
-            </div>
-            <div class="bg-white rounded-lg shadow-lg p-6">
-                <h2 class="text-xl font-bold mb-4">Formation IA pour les débutants</h2>
-                <p class="text-gray-700">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed euismod, tortor eget consectetur aliquet, mauris mauris lacinia nunc, nec tincidunt nisl urna et nunc.</p>
-                <a href="#" class="text-blue-500 font-bold mt-4">En savoir plus</a>
-            </div>
-            <div class="bg-white rounded-lg shadow-lg p-6">
-                <h2 class="text-xl font-bold mb-4">Formation IA appliquée à la finance</h2>
-                <p class="text-gray-700">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed euismod, tortor eget consectetur aliquet, mauris mauris lacinia nunc, nec tincidunt nisl urna et nunc.</p>
-                <a href="#" class="text-blue-500 font-bold mt-4">En savoir plus</a>
-            </div>
+
+    <div class="container mx-auto mt-16">
+        <h1 class="text-3xl font-bold text-gray-800 mb-4 text-center">Formations IA</h1>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <?php foreach ($formations as $index => $formation) : ?>
+                <div class="bg-white rounded-lg shadow-md p-6 mb-4 <?php echo ($index === count($formations) - 1) ? 'md:col-span-2 md:text-center' : ''; ?>">
+                    <h2 class="text-xl font-bold text-gray-800 mb-2"><?php echo $formation['titre']; ?></h2>
+                    <p class="text-gray-600 mb-2"><?php echo $formation['description']; ?></p>
+                    <p class="text-gray-700">Prix : <?php echo $formation['prix']; ?> €</p>
+                    <div class="flex mt-4 <?php echo ($index === 2) ? 'justify-center' : ''; ?>">
+                        <button class="bg-blue-500 text-white px-4 py-2 rounded-md">Ajouter au panier</button>
+                        <button class="bg-gray-300 text-gray-800 px-4 py-2 rounded-md ml-4">Voir plus de détails</button>
+                    </div>
+                </div>
+            <?php endforeach; ?>
         </div>
     </div>
-    
+
+    <footer class="bg-gray-800 py-4 fixed bottom-0 w-full">
+        <div class="container mx-auto px-4">
+            <div class="flex items-center justify-between">
+                <div class="text-white">
+                    &copy; 2024 Freddy. Tous droits réservés.
+                </div>
+                <div class="text-white">
+                    Suivez-nous sur les réseaux sociaux:
+                    <a href="#" class="text-blue-500 ml-2">Facebook</a>
+                    <a href="#" class="text-blue-500 ml-2">Twitter</a>
+                    <a href="#" class="text-blue-500 ml-2">Instagram</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../script/navbar.js"></script>
+
 </body>
+
 </html>
