@@ -35,13 +35,12 @@ $formations = Formation::getFormationIA();
         <?php if (!empty($formations)) : ?>
             <ul class="space-y-4">
                 <?php foreach ($formations as $index => $formation) : ?>
-                    <li class="rounded">
+                    <li class="rounded ">
                         <div class="p-4">
                             <h2 class="text-2xl font-bold"><?= htmlspecialchars($formation['Titre']) ?></h2>
                             <p class="text-gray-700"><?= htmlspecialchars($formation['Description']) ?></p>
                             <p class="text-gray-700"><?= htmlspecialchars($formation['Durée']) ?> heures</p>
                             <p class="text-gray-700"><?= htmlspecialchars($formation['Prix']) ?> €</p>
-
                         </div>
                         <button class="btnAjouterPanier bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded" data-id-formation="<?= htmlspecialchars($formation['ID_formation']) ?>">Ajouter au panier</button>
                     </li>
@@ -54,6 +53,7 @@ $formations = Formation::getFormationIA();
             <p class="text-gray-700">Aucune formation disponible pour le moment.</p>
         <?php endif; ?>
     </div>
+
 
 
 

@@ -31,21 +31,22 @@ $formations = Formation::getFormationCloud();
     </nav>
 
     <div class="container mx-auto py-8">
-        <h1 class="text-3xl font-bold mb-4">Formations en Cloud</h1>
+        <h1 class="text-3xl font-bold mb-4">Formations Cloud</h1>
         <?php if (!empty($formations)) : ?>
             <ul class="space-y-4">
-                <?php foreach ($formations as $formation) : ?>
-                    <li class="bg-white p-4 rounded shadow-md">
-                        <div class="flex justify-between items-center">
-                            <div>
-                                <h2 class="text-2xl font-bold"><?= htmlspecialchars($formation['Titre']) ?></h2>
-                                <p class="text-gray-700"><?= htmlspecialchars($formation['Description']) ?></p>
-                                <p class="text-gray-700"><?= htmlspecialchars($formation['Durée']) ?> heures</p>
-                                <p class="text-gray-700"><?= htmlspecialchars($formation['Prix']) ?> €</p>
-                            </div>
-                            <button class="btnAjouterPanier bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded" data-id-formation="<?= htmlspecialchars($formation['ID_formation']) ?>">Ajouter au panier</button>
+                <?php foreach ($formations as $index => $formation) : ?>
+                    <li class="rounded ">
+                        <div class="p-4">
+                            <h2 class="text-2xl font-bold"><?= htmlspecialchars($formation['Titre']) ?></h2>
+                            <p class="text-gray-700"><?= htmlspecialchars($formation['Description']) ?></p>
+                            <p class="text-gray-700"><?= htmlspecialchars($formation['Durée']) ?> heures</p>
+                            <p class="text-gray-700"><?= htmlspecialchars($formation['Prix']) ?> €</p>
                         </div>
+                        <button class="btnAjouterPanier bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded" data-id-formation="<?= htmlspecialchars($formation['ID_formation']) ?>">Ajouter au panier</button>
                     </li>
+                    <?php if ($index < count($formations) - 1) : ?>
+                        <hr class="my-4 border-gray-300">
+                    <?php endif; ?>
                 <?php endforeach; ?>
             </ul>
         <?php else : ?>
@@ -53,30 +54,32 @@ $formations = Formation::getFormationCloud();
         <?php endif; ?>
     </div>
 
+
+
     <script>
         document.querySelectorAll('.btnAjouterPanier').forEach(button => {
             button.addEventListener('click', function() {
                 const idFormation = this.getAttribute('data-id-formation');
                 fetch('../controllers/controller-add-to-cart.php', {
-                    method: 'POST',
-                    headers: {
-                        'Content-Type': 'application/x-www-form-urlencoded'
-                    },
-                    body: new URLSearchParams({
-                        id_formation: idFormation
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'application/x-www-form-urlencoded'
+                        },
+                        body: new URLSearchParams({
+                            id_formation: idFormation
+                        })
                     })
-                })
-                .then(response => response.json())
-                .then(data => {
-                    if (data.success) {
-                        alert('Formation ajoutée au panier avec succès');
-                    } else {
-                        alert(data.message || 'Une erreur est survenue lors de l\'ajout au panier');
-                    }
-                })
-                .catch(error => {
-                    alert('Une erreur est survenue : ' + error.message);
-                });
+                    .then(response => response.json())
+                    .then(data => {
+                        if (data.success) {
+                            alert('Formation ajoutée au panier avec succès');
+                        } else {
+                            alert(data.message || 'Une erreur est survenue lors de l\'ajout au panier');
+                        }
+                    })
+                    .catch(error => {
+                        alert('Une erreur est survenue : ' + error.message);
+                    });
             });
         });
     </script>
