@@ -9,5 +9,5 @@ document.getElementById('clientContainer').addEventListener('click', function() 
 });
 
 
-// supprimer du panier 
+
 
