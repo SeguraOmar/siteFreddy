@@ -54,35 +54,24 @@ $formations = Formation::getFormationCloud();
         <?php endif; ?>
     </div>
 
+    <footer class="bg-gray-800 py-4  bottom-0 w-full">
+        <div class="container mx-auto px-4">
+            <div class="flex items-center justify-between">
+                <div class="text-white">
+                    &copy; 2024 Freddy. Tous droits réservés.
+                </div>
+                <div class="text-white">
+                    Suivez-nous sur les réseaux sociaux:
+                    <a href="#" class="text-blue-500 ml-2">Facebook</a>
+                    <a href="#" class="text-blue-500 ml-2">Twitter</a>
+                    <a href="#" class="text-blue-500 ml-2">Instagram</a>
+                </div>
+            </div>
+        </div>
+    </footer>
 
 
-    <script>
-        document.querySelectorAll('.btnAjouterPanier').forEach(button => {
-            button.addEventListener('click', function() {
-                const idFormation = this.getAttribute('data-id-formation');
-                fetch('../controllers/controller-add-to-cart.php', {
-                        method: 'POST',
-                        headers: {
-                            'Content-Type': 'application/x-www-form-urlencoded'
-                        },
-                        body: new URLSearchParams({
-                            id_formation: idFormation
-                        })
-                    })
-                    .then(response => response.json())
-                    .then(data => {
-                        if (data.success) {
-                            alert('Formation ajoutée au panier avec succès');
-                        } else {
-                            alert(data.message || 'Une erreur est survenue lors de l\'ajout au panier');
-                        }
-                    })
-                    .catch(error => {
-                        alert('Une erreur est survenue : ' + error.message);
-                    });
-            });
-        });
-    </script>
+    <script src="../script/Cloud.js"></script>
 </body>
 
 </html>

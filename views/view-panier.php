@@ -64,32 +64,35 @@
         </div>
     </nav>
 
-    <h1>Votre Panier</h1>
+    <div class="container mx-auto py-8">
+        <h1 class="text-3xl font-bold mb-4">Votre Panier</h1>
+        <?php 
+        $totalPrice = 0;
+        if (!empty($formationsPanier)) : ?>
+            <ul class="space-y-4">
+                <?php foreach ($formationsPanier as $formation) : ?>
+                    <li class="bg-white p-4 rounded shadow-md flex justify-between items-center">
+                        <p class="text-gray-700"><?= htmlspecialchars($formation['Titre']) ?></p>
+                        <p class="text-gray-700 ml-auto">Prix: <?= htmlspecialchars($formation['Prix']) ?></p>
+                    </li>
+                    <hr class="my-2 border-gray-300">
+                    <?php 
+                    $totalPrice += $formation['Prix'];
+                    ?>
+                <?php endforeach; ?>
+            </ul>
+        <?php else : ?>
+            <p class="text-gray-700">Votre panier est vide.</p>
+        <?php endif; ?>
+        <div class="flex justify-between items-center">
+            <p class="text-gray-700 font-bold mt-4">Prix total: <?= $totalPrice ?></p>
+            <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded mt-4">Validation commande</button>
+        </div>
+    </div>
 
-    <?php
-    // Vérifie si le panier n'est pas vide
-    if (!empty($formationsPanier)) {
-        // Boucle pour afficher les détails de chaque formation dans le panier
-        foreach ($formationsPanier as $formation) {
-            echo '<p> Titre: ' . $formation['Titre'] . ', Prix: ' . $formation['Prix'] . '</p>';
-        }
-    } else {
-        // Afficher un message si le panier est vide
-        echo '<p>Votre panier est vide.</p>';
-    }
-    ?>
 
-    <script>
-        document.getElementById('menuToggle').addEventListener('click', function() {
-            const menu = document.getElementById('menu');
-            menu.classList.toggle('hidden');
-        });
 
-        document.getElementById('clientContainer').addEventListener('click', function() {
-            const clientMenu = document.getElementById('clientMenu');
-            clientMenu.classList.toggle('hidden');
-        });
-    </script>
+    <script src="../script/panier.js"></script>
 </body>
 
 </html>
