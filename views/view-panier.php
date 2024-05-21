@@ -93,7 +93,10 @@
                     <hr class="my-4 border-gray-300">
                 <?php endforeach; ?>
             </ul>
-            <p class="text-2xl font-bold mt-4">Prix total: <?= $totalPrice ?> €</p>
+            <div class="flex justify-between items-center">
+                <p class="text-2xl font-bold mt-4">Prix total: <?= $totalPrice ?> €</p>
+                <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded mt-4">Valider la commande</button>
+            </div>
         <?php else : ?>
             <p class="text-gray-700">Votre panier est vide.</p>
         <?php endif; ?>
