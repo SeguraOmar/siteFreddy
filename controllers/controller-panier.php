@@ -1,23 +1,35 @@
-<?php 
+<?php
+
+require_once '../config/config.php';
+require_once '../models/Panier.php';
 
 session_start();
+ini_set('display_errors', 1);
+ini_set('display_startup_errors', 1);
+error_reporting(E_ALL);
 
-include_once '../config/config.php';
-include_once '../models/formation.php';
+if (!empty($_SESSION['panier'])) {
+    // Initialiser un tableau pour stocker les détails des formations dans le panier
+    $formationsPanier = array();
 
-if (isset($_POST['add_to_cart'])) {
-    $formation_id = $_POST['id_formation'];
-
-    if (!isset($_SESSION['panier'])) {
-        $_SESSION['panier'] = [];
+    // Boucle pour parcourir chaque formation dans le panier
+    foreach ($_SESSION['panier'] as $idFormation) {
+        // Récupérer les informations de la formation à partir de son ID
+        $formation = Panier::getFormationById($idFormation);
+        if ($formation) {
+            // Ajouter les détails de la formation au tableau
+            $formationsPanier[] = $formation;
+        } else {
+            // Ajouter un message si la formation n'est pas trouvée
+            $formationsPanier[] = array('ID_formation' => $idFormation, 'Titre' => 'Formation introuvable', 'Prix' => '');
+        }
     }
-
-    // Ajoute l'ID de la formation au panier 
-    $_SESSION['panier'][] = $formation_id;
-
-    // Redirige l'utilisateur vers la page du panier
-    header('Location: controller-panier.php');
-    exit();
+} else {
+    // Si le panier est vide, initialiser le tableau des formations à afficher comme vide
+    $formationsPanier = array();
 }
+include_once '../views/view-panier.php';
+?>
 
-require_once '../views/view-panier.php';
+
+

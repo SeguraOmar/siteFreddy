@@ -80,31 +80,31 @@
             <h2 class="text-2xl font-bold mb-10 text-center">Inscription</h2>
             <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
                 <div>
-                    <label for="user_lastname" class="block text-sm font-medium text-gray-700">Nom</label>
-                    <input type="text" name="user_lastname" id="user_lastname" class="form-input rounded-md border border-black" value="<?= isset($_POST['user_lastname']) ? htmlspecialchars($_POST['user_lastname']) : '' ?>">
+                    <label for="Nom" class="block text-sm font-medium text-gray-700">Nom</label>
+                    <input type="text" name="Nom" id="Nom" class="form-input rounded-md border border-black" value="<?= isset($_POST['Nom']) ? htmlspecialchars($_POST['Nom']) : '' ?>">
                     <span class="text-red-500">
-                        <?= isset($errors['user_lastname']) ? $errors['user_lastname'] : '' ?>
+                        <?= isset($errors['Nom']) ? $errors['Nom'] : '' ?>
                     </span>
                 </div>
                 <div>
-                    <label for="user_firstname" class="block text-sm font-medium text-gray-700">Prénom</label>
-                    <input type="text" name="user_firstname" id="user_firstname" class="form-input rounded-md border border-black" value="<?= isset($_POST['user_firstname']) ? htmlspecialchars($_POST['user_firstname']) : '' ?>">
+                    <label for="Prenom" class="block text-sm font-medium text-gray-700">Prénom</label>
+                    <input type="text" name="Prenom" id="Prenom" class="form-input rounded-md border border-black" value="<?= isset($_POST['Prenom']) ? htmlspecialchars($_POST['Prenom']) : '' ?>">
                     <span class="text-red-500">
-                        <?= isset($errors['user_firstname']) ? $errors['user_firstname'] : '' ?>
+                        <?= isset($errors['Prenom']) ? $errors['Prenom'] : '' ?>
                     </span>
                 </div>
                 <div>
-                    <label for="user_email" class="block text-sm font-medium text-gray-700">Email</label>
-                    <input type="email" name="user_email" id="user_email" class="form-input rounded-md border border-black" value="<?= isset($_POST['user_email']) ? htmlspecialchars($_POST['user_email']) : '' ?>">
+                    <label for="Email" class="block text-sm font-medium text-gray-700">Email</label>
+                    <input type="email" name="Email" id="Email" class="form-input rounded-md border border-black" value="<?= isset($_POST['Email']) ? htmlspecialchars($_POST['Email']) : '' ?>">
                     <span class="text-red-500">
-                        <?= isset($errors['user_email']) ? $errors['user_email'] : '' ?>
+                        <?= isset($errors['Email']) ? $errors['Email'] : '' ?>
                     </span>
                 </div>
                 <div>
-                    <label for="user_password" class="block text-sm font-medium text-gray-700">Mot de passe</label>
-                    <input type="password" name="user_password" id="user_password" class="form-input rounded-md border border-black">
+                    <label for="Mot_de_passe" class="block text-sm font-medium text-gray-700">Mot de passe</label>
+                    <input type="password" name="Mot_de_passe" id="Mot_de_passe" class="form-input rounded-md border border-black">
                     <span class="text-red-500">
-                        <?= isset($errors['user_password']) ? $errors['user_password'] : '' ?>
+                        <?= isset($errors['Mot_de_passe']) ? $errors['Mot_de_passe'] : '' ?>
                     </span>
                 </div>
                 <div>

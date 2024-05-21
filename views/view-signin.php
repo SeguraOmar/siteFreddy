@@ -78,17 +78,17 @@
         <form action="../controllers/controller-signin.php" method="post" class="bg-gray-100 p-10 rounded-lg">
             <h1 class="text-2xl font-bold text-center mb-5">Connexion</h1>
             <div class="mb-5">
-                <label for="user_email" class="block text-sm font-medium text-gray-700">E-Mail</label>
-                <input type="email" name="user_email" id="user_email" class="mt-1 p-2 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50" value="<?= isset($_POST['user_email']) ? htmlspecialchars($_POST['user_email']) : '' ?>">
+                <label for="Email" class="block text-sm font-medium text-gray-700">E-Mail</label>
+                <input type="email" name="Email" id="Email" class="mt-1 p-2 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50" value="<?= isset($_POST['Email']) ? htmlspecialchars($_POST['Email']) : '' ?>">
                 <span class="text-red-500">
-                    <?= isset($errors['user_email']) ? $errors['user_email'] : '' ?>
+                    <?= isset($errors['Email']) ? $errors['Email'] : '' ?>
                 </span>
             </div>
             <div class="mb-5">
-                <label for="user_password" class="block text-sm font-medium text-gray-700">Mot de passe</label>
-                <input type="password" name="user_password" id="user_password" class="mt-1 p-2 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50">
+                <label for="Mot_de_passe" class="block text-sm font-medium text-gray-700">Mot de passe</label>
+                <input type="password" name="Mot_de_passe" id="Mot_de_passe" class="mt-1 p-2 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50">
                 <span class="text-red-500">
-                    <?= isset($errors['user_password']) ? $errors['user_password'] : '' ?>
+                    <?= isset($errors['Mot_de_passe']) ? $errors['Mot_de_passe'] : '' ?>
                     <?= isset($errors['connexion']) ? $errors['connexion'] : ''  ?>
                 </span>
             </div>

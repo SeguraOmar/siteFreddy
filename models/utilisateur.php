@@ -5,12 +5,12 @@ class Utilisateur
     /**
      * Méthode permettant de créer un utilisateur
      *
-     * @param string $user_lastname       Nom de l'utilisateur
-     * @param string $user_firstname      Prénom de l'utilisateur
-     * @param string $user_email          Adresse mail de l'utilisateur
-     * @param string $user_password       Mot de passe de l'utilisateur
+     * @param string $Nom       Nom de l'utilisateur
+     * @param string $Prenom      Prénom de l'utilisateur
+     * @param string $Email         Adresse mail de l'utilisateur
+     * @param string $Mot_de_passe      Mot de passe de l'utilisateur
      */
-    public static function create(string $user_lastname, string $user_firstname, string $user_email, string $user_password)
+    public static function create(string $Nom, string $Prenom, string $Email, string $Mot_de_passe)
     {
         try {
 
@@ -21,7 +21,7 @@ class Utilisateur
             $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
             // Requête SQL pour insérer un utilisateur
-            $sql = "INSERT INTO `utilisateur`(`user_lastname`, `user_firstname`, `user_email`, `user_password`) VALUES (:user_lastname, :user_firstname, :user_email, :user_password)";
+            $sql = "INSERT INTO `utilisateur`(`Nom`, `Prenom`, `Email`, `Mot_de_passe`) VALUES (:Nom, :Prenom, :Email, :Mot_de_passe)";
 
 
 
@@ -30,11 +30,11 @@ class Utilisateur
             $query = $db->prepare($sql);
 
             // On relie les paramètres à nos marqueurs nominatifs à l'aide d'un bindValue 
-            $query->bindValue(':user_lastname', htmlspecialchars($user_lastname), PDO::PARAM_STR);
-            $query->bindValue(':user_firstname', htmlspecialchars($user_firstname), PDO::PARAM_STR);
-            $query->bindValue(':user_email', htmlspecialchars($user_email), PDO::PARAM_STR);
+            $query->bindValue(':Nom', htmlspecialchars($Nom), PDO::PARAM_STR);
+            $query->bindValue(':Prenom', htmlspecialchars($Prenom), PDO::PARAM_STR);
+            $query->bindValue(':Email', htmlspecialchars($Email), PDO::PARAM_STR);
             // Password_default permet à PHP de s'adapter automatiquement pour sécuriser le mot de passe de l'utilisateur 
-            $query->bindValue(':user_password', password_hash($user_password, PASSWORD_DEFAULT), PDO::PARAM_STR);
+            $query->bindValue(':Mot_de_passe', password_hash($Mot_de_passe, PASSWORD_DEFAULT), PDO::PARAM_STR);
 
             // Execution de la requête 
             $query->execute();
@@ -47,10 +47,10 @@ class Utilisateur
     /**
      * Méthode permettant de trouver un utilisateur par son email
      *
-     * @param string $user_email       Adresse mail de l'utilisateur
+     * @param string $Email       Adresse mail de l'utilisateur
      * @return bool                     Retourne true si l'utilisateur existe, false sinon
      */
-    public static function findByEmail(string $user_email): bool
+    public static function findByEmail(string $Email): bool
     {
         try {
             // Création de l'objet PDO pour la connexion à la BDD
@@ -60,13 +60,13 @@ class Utilisateur
             $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
             // Requête SQL pour trouver un utilisateur par son email
-            $sql = "SELECT * FROM `utilisateur` WHERE `user_email` = :user_email";
+            $sql = "SELECT * FROM `utilisateur` WHERE `Email` = :Email";
 
             // Préparation de la requête pour éviter les injections SQL 
             $query = $db->prepare($sql);
 
             // On relie les paramètres à nos marqueurs nominatifs à l'aide d'un bindValue 
-            $query->bindValue(':user_email', htmlspecialchars($user_email), PDO::PARAM_STR);
+            $query->bindValue(':Email', htmlspecialchars($Email), PDO::PARAM_STR);
 
             // Execution de la requête 
             $query->execute();
@@ -85,10 +85,10 @@ class Utilisateur
     /**
      * Méthode permettant de récupérer les informations d'un utilisateur
      *
-     * @param string $user_email       Adresse mail de l'utilisateur
+     * @param string $Email       Adresse mail de l'utilisateur
      * @return array|bool              Retourne un tableau contenant les informations de l'utilisateur ou false si l'utilisateur n'existe pas
      */
-    public static function getInfos(string $user_email): array
+    public static function getInfos(string $Email): array
     {
         try {
             // Création de l'objet PDO pour la connexion à la BDD
@@ -98,13 +98,13 @@ class Utilisateur
             $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
             // Requête SQL pour trouver un utilisateur par son email
-            $sql = "SELECT * FROM `utilisateur` WHERE `user_email` = :user_email";
+            $sql = "SELECT * FROM `utilisateur` WHERE `Email` = :Email";
 
             // Préparation de la requête pour éviter les injections SQL 
             $query = $db->prepare($sql);
 
             // On relie les paramètres à nos marqueurs nominatifs à l'aide d'un bindValue 
-            $query->bindValue(':user_email', htmlspecialchars($user_email), PDO::PARAM_STR);
+            $query->bindValue(':Email', htmlspecialchars($Email), PDO::PARAM_STR);
 
             // Execution de la requête 
             $query->execute();
@@ -119,5 +119,4 @@ class Utilisateur
             die();
         }
     }
-    
 }
