@@ -66,28 +66,37 @@
 
     <div class="container mx-auto py-8">
         <h1 class="text-3xl font-bold mb-4">Votre Panier</h1>
-        <?php 
-        $totalPrice = 0;
-        if (!empty($formationsPanier)) : ?>
+        <?php if (!empty($formationsPanier)) : ?>
             <ul class="space-y-4">
-                <?php foreach ($formationsPanier as $formation) : ?>
-                    <li class="bg-white p-4 rounded shadow-md flex justify-between items-center">
-                        <p class="text-gray-700"><?= htmlspecialchars($formation['Titre']) ?></p>
-                        <p class="text-gray-700 ml-auto">Prix: <?= htmlspecialchars($formation['Prix']) ?></p>
-                    </li>
-                    <hr class="my-2 border-gray-300">
-                    <?php 
+                <?php 
+                $totalPrice = 0;
+                foreach ($formationsPanier as $formation) : 
                     $totalPrice += $formation['Prix'];
-                    ?>
+                ?>
+                    <li class="p-4 bg-white rounded shadow">
+                        <div class="flex justify-between items-center">
+                            <div>
+                                <p class="text-xl font-bold"><?= htmlspecialchars($formation['Titre']) ?></p>
+                                <p class="text-gray-700"><?= htmlspecialchars($formation['Prix']) ?> €</p>
+                            </div>
+                            <form method="post" class="ml-4">
+                                <input type="hidden" name="id_formation" value="<?= htmlspecialchars($formation['ID_formation']) ?>">
+                                <input type="hidden" name="action" value="supprimer">
+                                <button type="submit" class="text-red-500 hover:text-red-700">
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+                                    </svg>
+                                </button>
+                            </form>
+                        </div>
+                    </li>
+                    <hr class="my-4 border-gray-300">
                 <?php endforeach; ?>
             </ul>
+            <p class="text-2xl font-bold mt-4">Prix total: <?= $totalPrice ?> €</p>
         <?php else : ?>
             <p class="text-gray-700">Votre panier est vide.</p>
         <?php endif; ?>
-        <div class="flex justify-between items-center">
-            <p class="text-gray-700 font-bold mt-4">Prix total: <?= $totalPrice ?></p>
-            <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded mt-4">Validation commande</button>
-        </div>
     </div>
 
 

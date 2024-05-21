@@ -7,3 +7,7 @@ document.getElementById('clientContainer').addEventListener('click', function() 
     const clientMenu = document.getElementById('clientMenu');
     clientMenu.classList.toggle('hidden');
 });
+
+
+// supprimer du panier 
+
