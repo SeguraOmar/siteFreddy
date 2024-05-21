@@ -23,9 +23,6 @@ class Utilisateur
             // Requête SQL pour insérer un utilisateur
             $sql = "INSERT INTO `utilisateur`(`Nom`, `Prenom`, `Email`, `Mot_de_passe`) VALUES (:Nom, :Prenom, :Email, :Mot_de_passe)";
 
-
-
-
             // Préparation de la requête pour éviter les injections SQL 
             $query = $db->prepare($sql);
 
@@ -39,6 +36,7 @@ class Utilisateur
             // Execution de la requête 
             $query->execute();
         } catch (PDOException $e) {
+            // Gérer les erreurs
             echo 'Erreur : ' . $e->getMessage();
             die();
         }
@@ -77,6 +75,7 @@ class Utilisateur
             // On retourne true si l'utilisateur existe, false sinon
             return $count > 0;
         } catch (PDOException $e) {
+            // Gérer les erreurs PDO
             echo 'Erreur : ' . $e->getMessage();
             die();
         }
@@ -115,8 +114,10 @@ class Utilisateur
             // On retourne les résultats
             return $result;
         } catch (PDOException $e) {
+            // Gérer les erreurs PDO
             echo 'Erreur : ' . $e->getMessage();
             die();
         }
     }
 }
+?>
